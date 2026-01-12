@@ -1,5 +1,5 @@
 import prisma from "@/lib/prisma";
-import { Prisma } from "@prisma/client";
+import type { StreamSpeed as PrismaStreamSpeed } from "@prisma/client";
 import { NextResponse } from "next/server";
 
 const preferenceId = "default";
@@ -50,7 +50,7 @@ export async function POST(request: Request) {
     );
   }
 
-  const streamSpeed = streamSpeedInput as Prisma.StreamSpeed;
+  const streamSpeed = streamSpeedInput as PrismaStreamSpeed;
 
   const preference = await prisma.chatPreference.upsert({
     where: { id: preferenceId },
