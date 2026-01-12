@@ -3,6 +3,9 @@ import { generateText } from "ai";
 import prisma from "@/lib/prisma";
 import { NextResponse } from "next/server";
 
+export const dynamic = "force-dynamic";
+export const runtime = "nodejs";
+
 const preferenceId = "default";
 const minTemperature = 0;
 const maxTemperature = 0.8;
