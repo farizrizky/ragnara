@@ -1,0 +1,29 @@
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+enum StreamSpeed {
+  INSTANT
+  SLOW
+  FAST
+  NORMAL
+}
+
+model ChatPreference {
+  id          String      @id
+  name        String
+  tone        String
+  streamSpeed StreamSpeed
+  openingLine String
+  temperature  Float @default(0.4)
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+}
+

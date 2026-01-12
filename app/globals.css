@@ -1,8 +1,33 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f2f6ff;
+  --foreground: #0b1224;
+  --panel: #ffffff;
+  --panel-border: #dbe5f5;
+  --muted: #42506b;
+  --accent-1: #1f4bd8;
+  --accent-2: #3b82f6;
+  --accent-3: #0b1224;
+  --ring: #2563eb;
+  --gradient-start: #e8f0ff;
+  --gradient-mid: #d9e7ff;
+  --gradient-end: #f6f9ff;
+}
+
+.dark {
+  --background: #070b16;
+  --foreground: #e6ecf8;
+  --panel: #0d1426;
+  --panel-border: #1b2740;
+  --muted: #9aa7bf;
+  --accent-1: #2f6bff;
+  --accent-2: #4f8bff;
+  --accent-3: #070b16;
+  --ring: #3b82f6;
+  --gradient-start: #0c1326;
+  --gradient-mid: #081027;
+  --gradient-end: #05080f;
 }
 
 @theme inline {
@@ -12,15 +37,15 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), "Helvetica Neue", Arial, sans-serif;
+}
+
+.bg-landing {
+  background:
+    radial-gradient(1100px circle at 0% 0%, var(--gradient-start), transparent 55%),
+    radial-gradient(900px circle at 100% 100%, var(--gradient-mid), transparent 55%),
+    linear-gradient(160deg, var(--gradient-start), var(--gradient-end));
 }
